@@ -6,7 +6,7 @@ import store from '@/store'
 import Vant from 'vant'
 
 import '@/styles/index.scss'
-import 'vant/lib/index.css'
+// import 'vant/lib/index.css'
 
 Vue.config.productionTip = false
 Vue.use(Vant) // PC
