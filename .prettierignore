@@ -31,3 +31,4 @@ components/*/*.jsx
 components/style/color/*.less
 .eslintrc.js
 .eslintrc.json
+.postcssrc.js

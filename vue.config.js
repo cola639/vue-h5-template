@@ -2,7 +2,6 @@
 const path = require('path')
 const title = 'Title' // page title
 const isProd = process.env.NODE_ENV === 'development'
-console.log('🚀 >> isProd:', isProd)
 
 function resolve(dir) {
   return path.join(__dirname, dir)

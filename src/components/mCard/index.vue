@@ -9,9 +9,8 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dolore perferendis magni,
         alias et officia modi dicta! Corrupti quam cum dolorem aliquam explicabo esse reiciendis.
       </div>
-      <div class="card_btn">
-        <van-button @click="handleTotast">消息弹窗</van-button>
-      </div>
+
+      <van-button class="card_btn" @click="handleTotast" type="primary">消息弹窗</van-button>
     </div>
   </div>
 </template>
@@ -28,15 +27,20 @@ export default {
   beforeDestroy() {},
   watch: {},
   computed: {},
-  methods: {}
+  methods: {
+    handleTotast() {
+      this.$toast('消息提示')
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
 .card_wrap {
-  width: 300px;
-  height: 300px;
+  width: 8rem;
+  height: 8rem;
   padding: 6px;
-  box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0), 0 3px 3px hsla(0, 0, 0, 0.2);
+  margin: 8px 0;
+  box-shadow: 0 8px 12px #ebedf0;
   border-radius: 5px;
 }
 
@@ -54,17 +58,19 @@ export default {
 
 .card_right {
   .card_title {
-    font-size: 20px;
+    font-size: 0.533rem;
   }
   .card_description {
     margin-top: 8px;
-    font-size: 16px;
+    font-size: 0.427rem;
   }
 
   .card_btn {
     margin-top: 8px;
-    width: 50px;
-    height: 28px;
+    width: 2.133rem;
+    height: 1rem;
+    padding: 0.133rem;
+    font-size: 0.4rem;
   }
 }
 </style>
