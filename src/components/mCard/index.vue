@@ -36,8 +36,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .card_wrap {
-  width: 8rem;
-  height: 8rem;
+  width: 300px;
+  height: 300px;
   padding: 6px;
   margin: 8px 0;
   box-shadow: 0 8px 12px #ebedf0;
@@ -58,19 +58,19 @@ export default {
 
 .card_right {
   .card_title {
-    font-size: 0.533rem;
+    font-size: 20px;
   }
   .card_description {
     margin-top: 8px;
-    font-size: 0.427rem;
+    font-size: 16px;
   }
 
   .card_btn {
     margin-top: 8px;
-    width: 2.133rem;
-    height: 1rem;
-    padding: 0.133rem;
-    font-size: 0.4rem;
+    width: 80px;
+    height: 38px;
+    padding: 5px;
+    font-size: 16px;
   }
 }
 </style>
