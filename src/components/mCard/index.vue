@@ -29,6 +29,7 @@ export default {
   computed: {},
   methods: {
     handleTotast() {
+      console.log('消息提示')
       this.$toast('消息提示')
     }
   }
