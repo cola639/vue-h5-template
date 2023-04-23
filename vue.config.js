@@ -1,7 +1,7 @@
 // vue.config.js
 const path = require('path')
 const title = 'Title' // page title
-const isProd = process.env.NODE_ENV === 'development'
+const isProd = process.env.NODE_ENV === 'production'
 
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -35,12 +35,12 @@ module.exports = {
     config.devtool = isProd ? '' : 'inline-source-map'
 
     // cancel console.log
-    // if (isProd) {
-    //   config.optimization.minimizer[0].options.terserOptions.compress.warnings = false
-    //   config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
-    //   config.optimization.minimizer[0].options.terserOptions.compress.drop_debugger = true
-    //   config.optimization.minimizer[0].options.terserOptions.compress.pure_funcs = ['console.log']
-    // }
+    if (isProd) {
+      config.optimization.minimizer[0].options.terserOptions.compress.warnings = false
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_debugger = true
+      config.optimization.minimizer[0].options.terserOptions.compress.pure_funcs = ['console.log']
+    }
 
     // alias
     config.externals = {
@@ -82,11 +82,11 @@ module.exports = {
       .end()
 
     // visualization webpack only local develop analyzer
-    // if (process.env.NODE_ENV === 'production') {
-    //   config
-    //     .plugin('webpack-bundle-analyzer')
-    //     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
-    // }
+    if (isProd) {
+      config
+        .plugin('webpack-bundle-analyzer')
+        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+    }
 
     // set preserveWhitespace
     config.module
