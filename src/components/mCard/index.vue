@@ -9,8 +9,8 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dolore perferendis magni,
         alias et officia modi dicta! Corrupti quam cum dolorem aliquam explicabo esse reiciendis.
       </div>
-
-      <van-button class="card_btn" @click="handleTotast" type="primary">消息弹窗</van-button>
+      <svg-icon icon-class="user" />
+      <van-button class="card_btn" @click="handleTotast" type="primary"> 消息弹窗 </van-button>
     </div>
   </div>
 </template>
