@@ -20,7 +20,7 @@ npm run build
 
 ### 目录
 
-- √ Vue-cli3
+- [√ Vue-cli4](#vue)
 - [√ 配置多环境变量](#env)
 - [√ rem 适配方案](#rem)
 - [√ Sass 全局样式](#sass)
@@ -36,3 +36,8 @@ npm run build
 - [√ splitChunks 单独打包第三方模块](#chunks)
 - [√ Eslint+Pettier 统一开发规范 ](#pettier)
 - [√ 自定义 svg 组件 ](#svg)
+- [√ 定制化 Vant UI ](#vant)
+
+### Coming soon
+
+- [√ 时间格式化工具](#momentjs)

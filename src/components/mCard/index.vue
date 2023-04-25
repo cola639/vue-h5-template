@@ -68,6 +68,7 @@ export default {
 
   .card_btn {
     margin-top: 8px;
+    margin-left: 8px;
     width: 80px;
     height: 38px;
     padding: 5px;
