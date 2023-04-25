@@ -1,5 +1,10 @@
 <template>
-  <div v-if="isExternal" :style="styleExternalIcon" class="svg-external-icon svg-icon" v-on="$listeners" />
+  <div
+    v-if="isExternal"
+    :style="styleExternalIcon"
+    class="svg-external-icon svg-icon"
+    v-on="$listeners"
+  />
   <svg v-else :class="svgClass" aria-hidden="true" v-on="$listeners">
     <use :xlink:href="iconName" />
   </svg>
@@ -12,6 +17,7 @@ import { isExternal } from '@/utils/validate'
 export default {
   name: 'SvgIcon',
   props: {
+    // iconClass 传入本地svg文件名
     iconClass: {
       type: String,
       required: true
@@ -56,7 +62,7 @@ export default {
 
 .svg-external-icon {
   background-color: currentColor;
-  mask-size: cover!important;
+  mask-size: cover !important;
   display: inline-block;
 }
 </style>

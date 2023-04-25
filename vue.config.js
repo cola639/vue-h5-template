@@ -1,6 +1,7 @@
 // vue.config.js
 const path = require('path')
 const title = 'Title' // page title
+// const themePath = path.join(__dirname, './src/styles/theme/overwrite.less') // vant theme
 const isProd = process.env.NODE_ENV === 'production'
 
 function resolve(dir) {
@@ -133,10 +134,8 @@ module.exports = {
     loaderOptions: {
       // less: {
       //   modifyVars: {
-      //     // overide with less vars
-      //     'overlay-background-color': 'rgba(0, 0, 0, 0.2)'
-      //     // or override with less file
-      //     // hack: `true; @import "your-less-file-path.less";`
+      //     // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
+      //     // hack: `true; @import "${themePath}";`
       //   }
       // },
       scss: {
