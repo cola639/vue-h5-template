@@ -82,11 +82,11 @@ module.exports = {
       .end()
 
     // visualization webpack only local develop analyzer
-    if (isProd) {
-      config
-        .plugin('webpack-bundle-analyzer')
-        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
-    }
+    // if (isProd) {
+    //   config
+    //     .plugin('webpack-bundle-analyzer')
+    //     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+    // }
 
     // set preserveWhitespace
     config.module
