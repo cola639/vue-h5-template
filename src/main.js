@@ -4,15 +4,11 @@ import router from '@/router'
 import store from '@/store'
 import './assets/icons' // svg
 // import '@/permission' // permission control
-
-import Vant from 'vant'
-
+import '@/plugins/vant'
 import '@/styles/index.scss'
-import 'vant/lib/index.css'
-// import 'vant/lib/index.less'
+import 'vant/lib/index.less'
 
 Vue.config.productionTip = false
-Vue.use(Vant)
 
 // Mock data
 // if (process.env.NODE_ENV === 'production') {

@@ -1,7 +1,6 @@
-// vue.config.js
 const path = require('path')
 const title = 'Title' // page title
-// const themePath = path.join(__dirname, './src/styles/theme/overwrite.less') // vant theme
+const themePath = path.join(__dirname, './src/styles/theme/overwrite.less') // vant theme path
 const isProd = process.env.NODE_ENV === 'production'
 
 function resolve(dir) {
@@ -13,7 +12,7 @@ module.exports = {
 
   devServer: {
     disableHostCheck: true,
-    open: false,
+    open: false, // default open
     // before: require('./mock/mock-server.js'), // open mock data
     // host: "127.0.0.1",   //指定端口
     // https: true, //开启 https
@@ -132,14 +131,13 @@ module.exports = {
   // define css module
   css: {
     loaderOptions: {
-      // less: {
-      //   modifyVars: {
-      //     // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
-      //     // hack: `true; @import "${themePath}";`
-      //   }
-      // },
+      less: {
+        modifyVars: {
+          hack: `true; @import "${themePath}";`
+        }
+      },
       scss: {
-        /* scss版本:若版本低于7，则使用data；高于8，则使用prependData */
+        /* scss-loader版本:若版本低于7，则使用data；高于8，则使用prependData */
         // prependData: "@import './src/styles/variables.scss';" variable scss
       }
     }
