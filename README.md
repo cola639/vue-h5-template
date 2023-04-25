@@ -22,7 +22,7 @@ npm run build
 
 - [√ Vue-cli4](#vue)
 - [√ 配置多环境变量](#env)
-- [√ rem 适配方案](#rem)
+- [√ vw 适配方案](#rem)
 - [√ Sass 全局样式](#sass)
 - [√ Vuex 状态管理](#vuex)
 - [√ Vue-router](#router)
@@ -36,7 +36,7 @@ npm run build
 - [√ splitChunks 单独打包第三方模块](#chunks)
 - [√ Eslint+Pettier 统一开发规范 ](#pettier)
 - [√ 自定义 svg 组件 ](#svg)
-- [√ 定制化 Vant UI ](#vant)
+- [√ 定制化主题 Vant UI ](#vant)
 
 ### Coming soon
 
