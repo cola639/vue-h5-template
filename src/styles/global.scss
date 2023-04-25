@@ -1,54 +1,7 @@
-// @media screen and (min-width: 375px) {
-//   html {
-//     font-size: 37.5px;
-//   }
-// }
-
-// @media screen and (min-width: 475px) {
-//   html {
-//     font-size: 47.5px;
-//   }
-// }
-
-// @media screen and (min-width: 575px) {
-//   html {
-//     font-size: 57.5px;
-//   }
-// }
-
-// @media screen and (min-width: 675px) {
-//   html {
-//     font-size: 67.5px;
-//   }
-// }
-
-// @media screen and (min-width: 750px) {
-//   html {
-//     font-size: 75px;
-//   }
-// }
-
-// @media screen and (min-width: 875px) {
-//   html {
-//     font-size: 87.5px;
-//   }
-// }
-
-// @media screen and (min-width: 1024px) {
-//   html {
-//     font-size: 102.4px;
-//   }
-// }
-
-// @media screen and (min-width: 1920px) {
-//   html {
-//     font-size: 12px;
-//   }
-// }
-
 html,
 *,
-*::after {
+*::after,
+*::before {
   font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;
 }
 
