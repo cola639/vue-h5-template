@@ -1,14 +1,15 @@
-const path = require('path')
-const title = 'Title' // page title
-const themePath = path.join(__dirname, './src/styles/theme/overwrite.less') // vant theme path
 const isProd = process.env.NODE_ENV === 'production'
+const path = require('path')
+const publicPath = '/web/'
+const themePath = path.join(__dirname, './src/styles/theme/overwrite.less') // vant theme path
+const title = 'Title' // page title
 
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
 module.exports = {
-  publicPath: '/',
+  publicPath,
 
   devServer: {
     disableHostCheck: true,
