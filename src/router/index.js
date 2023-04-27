@@ -32,7 +32,7 @@ export const constantRoutes = [
 const createRouter = () =>
   new Router({
     mode: 'history', // require service support
-    // base: process.env.BASE_URL,
+    base: process.env.VUE_APP_PUBLIC_PATH, // publicPath
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
   })
