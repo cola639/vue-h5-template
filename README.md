@@ -18,7 +18,7 @@ npm run dev
 npm run build
 ```
 
-### 目录
+### 功能
 
 - [√ Vue-cli4](#vue)
 - [√ 配置多环境变量](#env)
@@ -41,3 +41,5 @@ npm run build
 ### Coming soon
 
 - [√ 时间格式化工具](#momentjs)
+
+### 目录说明

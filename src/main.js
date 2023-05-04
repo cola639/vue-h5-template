@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from '@/router'
 import store from '@/store'
 import './assets/icons' // svg
-// import '@/permission' // permission control
+import '@/permission' // permission control
 import '@/plugins/vant'
 import '@/styles/index.scss'
 import 'vant/lib/index.less'
