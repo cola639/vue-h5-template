@@ -10,7 +10,7 @@
         alias et officia modi dicta! Corrupti quam cum dolorem aliquam explicabo esse reiciendis.
       </div>
       <svg-icon icon-class="user" />
-      <van-button class="card_btn" @click="handleTotast" type="primary"> 消息弹窗 </van-button>
+      <van-button class="card_btn" @click="handleTotast" type="warning"> 消息弹窗 </van-button>
     </div>
   </div>
 </template>

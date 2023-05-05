@@ -1,5 +1,5 @@
 const path = require('path')
-const title = 'Title' // page title
+const title = 'VUE-H5' // page title
 const themePath = path.join(__dirname, './src/styles/theme/overwrite.less') // vant theme path
 const isProd = process.env.NODE_ENV === 'production'
 const publicPath = process.env.VUE_APP_PUBLIC_PATH
@@ -13,19 +13,19 @@ module.exports = {
 
   devServer: {
     disableHostCheck: true,
-    open: false, // default open
+    open: false // default open
     // before: require('./mock/mock-server.js'), // open mock data
     // host: "127.0.0.1",   //指定端口
     // https: true, //开启 https
-    proxy: {
-      '/api': {
-        target: 'http://192.168.2.134:9800',
-        changeOrigin: true
-        // pathRewrite: {
-        //   '^/api': ''
-        // }
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://192.168.2.134:9800',
+    //     changeOrigin: true
+    //     // pathRewrite: {
+    //     //   '^/api': ''
+    //     // }
+    //   }
+    // }
   },
 
   configureWebpack(config) {
