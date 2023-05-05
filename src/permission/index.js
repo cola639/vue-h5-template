@@ -119,7 +119,6 @@ NProgress.configure({ showSpinner: false }) // NProgress Configuration loading c
 // }
 
 router.beforeEach(async (to, from, next) => {
-  console.log('to.path', to.path)
   // start progress bar
   NProgress.start()
   next()
