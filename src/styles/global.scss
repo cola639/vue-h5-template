@@ -1,7 +1,5 @@
 html,
-*,
-*::after,
-*::before {
+* {
   font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;
 }
 
@@ -55,6 +53,10 @@ html,
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.app-container {
+  padding-bottom: 50px;
 }
 
 // 居中

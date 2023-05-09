@@ -31,12 +31,12 @@ npm run build
 - [√ 配置 alias 别名](#alias)
 - [√ 配置 proxy 跨域](#proxy)
 - [√ 配置 打包分析](#bundle)
-- [√ 配置 externals 引入 cdn 资源 ](#externals)
 - [√ 生产环境去掉 console.log ](#console)
 - [√ splitChunks 单独打包第三方模块](#chunks)
 - [√ Eslint+Pettier 统一开发规范 ](#pettier)
 - [√ 自定义 svg 组件 ](#svg)
 - [√ 定制化主题 Vant UI ](#vant)
+- [√ Layout 布局 ](#layout)
 
 ### Coming soon
 
