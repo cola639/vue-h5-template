@@ -13,7 +13,7 @@ module.exports = {
 
   devServer: {
     disableHostCheck: true,
-    open: false // default open
+    open: false // default true
     // before: require('./mock/mock-server.js'), // open mock data
     // host: "127.0.0.1",   //指定端口
     // https: true, //开启 https
