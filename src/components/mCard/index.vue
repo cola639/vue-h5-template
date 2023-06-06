@@ -4,7 +4,7 @@
       <img src="https://img01.yzcdn.cn/vant/ipad.jpeg" />
     </div>
     <div class="card_right">
-      <div class="card_title">卡片标题</div>
+      <div class="card_title">修改卡片标题</div>
       <div class="card_description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dolore perferendis magni,
         alias et officia modi dicta! Corrupti quam cum dolorem aliquam explicabo esse reiciendis.
