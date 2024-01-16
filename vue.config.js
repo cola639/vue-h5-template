@@ -20,10 +20,10 @@ module.exports = {
     // proxy: {
     //   '/api': {
     //     target: 'http://192.168.2.134:9800',
-    //     changeOrigin: true
     //     // pathRewrite: {
     //     //   '^/api': ''
     //     // }
+    //     changeOrigin: true
     //   }
     // }
   },
