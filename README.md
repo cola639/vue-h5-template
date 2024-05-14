@@ -1,5 +1,7 @@
 # Vue H5 Template
 
+Node Version 16.x
+
 ## Project setup
 
 ```
