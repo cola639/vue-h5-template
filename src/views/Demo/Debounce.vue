@@ -1,30 +1,27 @@
 <template>
   <div class="demo">
-    <van-search v-model="query" @input="onChange" />
+    <van-search v-model="query" @input="debounceSearch" />
   </div>
 </template>
 
 <script>
 import { debounce } from '@/utils/index'
 export default {
-  name: 'demo',
+  name: 'Debounce',
   components: {},
   data() {
     return { debounceSearch: undefined }
   },
   props: {},
-  created() {},
-  mounted() {
+  created() {
     // 创建防抖函数
     this.debounceSearch = debounce(this.search, 1000)
   },
+  mounted() {},
   beforeDestroy() {},
   computed: {},
   watch: {},
   methods: {
-    onChange() {
-      this.debounceSearch() // 使用防抖函数
-    },
     search() {
       console.log('Ajax request')
     }
