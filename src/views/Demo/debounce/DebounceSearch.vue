@@ -5,7 +5,7 @@
 
       <el-autocomplete
         class="midCenter_search"
-        v-model="query"
+        v-model="name"
         :fetch-suggestions="debouncedNameSearch"
         @select="handleSelect"
         placeholder="请输入内容"
@@ -39,7 +39,8 @@ export default {
   components: { TitleProgress, DialogDetail, TianMap },
   data() {
     return {
-      query: '',
+      name: '',
+      queryId: undefined,
       dialogVisible: false,
       restaurants: [],
       debouncedNameSearch: null
@@ -57,6 +58,9 @@ export default {
   methods: {
     async nameSearch(name, cb) {
       console.log('🚀 >> nameSearch >> name:', name)
+      // 清除旧数据
+      // this.queryId = undefined
+
       // 这里是实际的搜索逻辑，确保处理空字符串等边缘情况
       if (!name.trim()) return
       const res = await getName({ personName: name })
@@ -67,7 +71,9 @@ export default {
       console.log('search')
     },
     handleSelect(item) {
-      console.log(item)
+      console.log('item', item)
+      this.name = item.name
+      this.queryId = item.id
     },
     closeDialog(value) {
       this.dialogVisible = value
