@@ -26,7 +26,7 @@ import TitleProgress from './TitleProgress.vue'
 import TianMapTrace from './TianMapTrace.vue'
 import { getTrack } from '@/api/communityCorrection_v2.js'
 export default {
-  name: 'DatepickRange',
+  name: 'DialogTrace',
   components: { TitleProgress, TianMapTrace },
   data() {
     return {
@@ -172,25 +172,28 @@ export default {
   font-family: 'FZFont';
   font-weight: 600;
 }
-/deep/ .el-date-range-picker {
+</style>
+
+// DOM弹出元素 无法使用 /deep/ 穿透
+<style lang="scss">
+.el-date-range-picker.has-sidebar {
   width: 1200px;
 }
-// /deep/ .el-date-table {
-//   font-size: 20px;
-//   font-family: 'FZFont';
-//   font-weight: 600;
-// }
-// /deep/ .el-date-range-picker__header {
-//   font-size: 20px;
-//   font-family: 'FZFont';
-//   font-weight: 600;
-// }
-// /deep/ .el-picker-panel__shortcut {
-//   font-size: 20px;
-//   font-family: 'FZFont';
-//   font-weight: 600;
-// }
-// /deep/ .el-picker-panel__sidebar {
-//   width: 120px;
-// }
+
+.el-date-table {
+  font-size: 14px;
+  font-family: 'FZFont';
+}
+.el-date-range-picker__header {
+  font-size: 20px;
+  font-family: 'FZFont';
+}
+.el-picker-panel__shortcut {
+  font-size: 18px;
+  font-family: 'FZFont';
+  font-weight: 4500;
+}
+.el-picker-panel__sidebar {
+  width: 130px;
+}
 </style>
