@@ -8,7 +8,7 @@
  * @param {string} cFormat
  * @returns {string | null}
  */
-function parseTime(time, cFormat) {
+export function parseTime(time, cFormat) {
   if (arguments.length === 0 || !time) {
     return null
   }
@@ -58,7 +58,7 @@ function parseTime(time, cFormat) {
  * @param {string} option
  * @returns {string}
  */
-function formatTime(time, option) {
+export function formatTime(time, option) {
   if (('' + time).length === 10) {
     time = parseInt(time) * 1000
   } else {
@@ -92,7 +92,7 @@ function formatTime(time, option) {
  * @param {string} url
  * @returns {Object}
  */
-function param2Obj(url) {
+export function param2Obj(url) {
   const search = decodeURIComponent(url.split('?')[1]).replace(/\+/g, ' ')
   if (!search) {
     return {}
@@ -110,7 +110,7 @@ function param2Obj(url) {
   return obj
 }
 
-function getUrlParam(param) {
+export function getUrlParam(param) {
   const reg = new RegExp('(^|&)' + param + '=([^&]*)(&|$)')
   const r =
     window.location.search.substr(1).match(reg) ||
@@ -121,7 +121,7 @@ function getUrlParam(param) {
 }
 
 // deep clone
-function deepClone(obj) {
+export function deepClone(obj) {
   if (typeof obj !== 'object') return
   let newObj = obj instanceof Array ? [] : {}
   for (let key in obj) {
@@ -132,14 +132,6 @@ function deepClone(obj) {
   }
 
   return newObj
-}
-
-export default {
-  parseTime,
-  formatTime,
-  param2Obj,
-  getUrlParam,
-  deepClone
 }
 
 /**
