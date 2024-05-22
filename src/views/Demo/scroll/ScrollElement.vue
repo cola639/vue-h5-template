@@ -2,19 +2,20 @@
   <div class="ScrollElement">
     <div class="banner">
       <div class="name">姓名</div>
-      <div class="status">报道情况</div>
+      <div class="status">报到情况</div>
       <div class="time">报到时间</div>
       <div class="address">报到地点</div>
     </div>
     <div class="scroll_parent_box" @mouseenter="mEnter" @mouseleave="mLeave">
       <div class="scroll_list" :style="{ transform: `translate(0px,-${scrollTop}px)` }">
         <div ref="scrollItemBox">
-          <ScrollItem />
-          <ScrollItem :isEven="true" />
-          <ScrollItem />
-          <ScrollItem :isEven="true" />
-          <ScrollItem />
-          <ScrollItem :isEven="true" />
+          <ScrollItem
+            v-for="(item, index) in listData"
+            :key="index"
+            :order="index + 1"
+            :item="item"
+            :isEven="isEvenOrOdd(index)"
+          />
         </div>
         <!-- <div v-html="copyHtml" /> -->
       </div>
@@ -24,6 +25,7 @@
 
 <script>
 import ScrollItem from './ScrollItem.vue'
+import { getCityReport } from '@/api/communityCorrection_v2.js'
 export default {
   name: 'ScrollElement',
   data() {
@@ -39,15 +41,25 @@ export default {
     ScrollItem
   },
   mounted() {
-    // 如果列表数据是异步获取的，记得初始化在获取数据后再调用
-    this.initScroll()
+    this.getData()
+    setInterval(() => {
+      this.getData()
+    }, 1000 * 60)
   },
   methods: {
+    async getData() {
+      // 如果列表数据是异步获取的，记得初始化在获取数据后再调用
+      const res = await getCityReport()
+      this.listData = res
+      this.initScroll()
+    },
+
     initScroll() {
-      this.$nextTick(() => {
-        // this.copyHtml = this.$refs.scrollItemBox.innerHTML // 不留空白
-        this.startScroll()
-      })
+      // 监听定时器是否启动 避免反复启动引发性能问题
+      if (this.timer) return
+      // 需要不留空白时使用 copyHtml
+      // this.copyHtml = this.$refs.scrollItemBox.innerHTML
+      this.listData.length > 10 && this.startScroll()
     },
     // 开始滚动
     startScroll() {
@@ -63,13 +75,20 @@ export default {
         this.scrollTop = 0
       }
     },
-    // 鼠标移入停止滚动
+    // 鼠标移入清除定时器 停止滚动
     mEnter() {
-      clearInterval(this.timer)
+      if (this.timer) {
+        clearInterval(this.timer)
+        this.timer = null
+      }
     },
     // 鼠标移出继续滚动
     mLeave() {
-      this.startScroll()
+      this.listData.length > 10 && this.startScroll()
+    },
+    // 判断奇数偶数
+    isEvenOrOdd(num) {
+      return num % 2 !== 0
     }
   }
 }
@@ -93,14 +112,14 @@ export default {
     font-weight: 700;
     background-color: #123665;
     .name {
-      width: 30%;
-      text-align: center;
+      width: 20%;
+      text-indent: 2em;
     }
     .status {
       width: 20%;
     }
     .time {
-      width: 20%;
+      width: 30%;
     }
     .address {
       width: 30%;

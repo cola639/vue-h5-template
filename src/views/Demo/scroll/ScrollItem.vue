@@ -1,14 +1,16 @@
 <template>
   <div :class="[isEven ? 'isEven' : '', 'ScrollItem']">
-    <div class="wrap"><div class="num">1000</div></div>
-    <div class="name">湾仔码头</div>
-    <div class="status">报道可能有问题</div>
-    <div class="time">2024年04月12日</div>
-    <el-tooltip placement="top-start" content="Top Left 提示文字" effect="light">
+    <div class="wrap">
+      <div class="num">{{ order }}</div>
+    </div>
+    <div class="name">{{ item.name }}</div>
+    <div class="status">{{ item.reason }}</div>
+    <div class="time">{{ item.time }}</div>
+    <el-tooltip placement="top-start" effect="light">
       <div slot="content" :style="{ fontSize: '25px' }">
-        香港特别行政区深水街道100号丸子码头发廊店
+        {{ item.address }}
       </div>
-      <div class="address">香港特别行政区深水街道100号丸子码头发廊店</div>
+      <div class="address">{{ item.address }}</div>
     </el-tooltip>
   </div>
 </template>
@@ -21,7 +23,9 @@ export default {
     return {}
   },
   props: {
-    isEven: { type: Boolean }
+    item: { type: Object, required: true },
+    isEven: { type: Boolean },
+    order: { type: Number }
   },
   created() {},
   mounted() {},
@@ -45,7 +49,6 @@ export default {
   height: 70px;
   line-height: 70px;
   color: #ffffff;
-
   font-size: 18px;
   font-weight: 700;
 
@@ -65,7 +68,7 @@ export default {
     background-color: #2db0ff;
   }
   .name {
-    width: 20%;
+    width: 10%;
     height: 100%;
   }
   .status {
@@ -73,8 +76,12 @@ export default {
     height: 100%;
   }
   .time {
-    width: 20%;
+    width: 30%;
     height: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
   }
   .address {
     width: 30%;

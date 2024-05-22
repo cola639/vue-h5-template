@@ -151,3 +151,21 @@ export function debounce(fn, delay) {
     }, delay)
   }
 }
+
+/**
+ * throttle 节流
+ * 当持续触发事件时，保证满足时间间隔才触发事件。
+ * 场景: 1 图片懒加载 滚动加载 2 防止高频点击 频繁提交表单
+ * @param {Function} fn
+ * @param {number} delay
+ * @returns
+ */
+export function throttle(fn, delay) {
+  let begin = 0
+  return function (...args) {
+    let now = Date.now()
+
+    if (now - begin > delay) fn.apply(this, args)
+    begin = now
+  }
+}

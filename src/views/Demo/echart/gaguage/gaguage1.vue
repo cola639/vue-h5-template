@@ -10,14 +10,16 @@ export default {
     return { echartInstance: null }
   },
   props: {
-    echartData: { type: Number, required: true, default: 0 }
+    rate: { required: true, default: 0 }
   },
   created() {},
-  mounted() {},
+  mounted() {
+    this.initEchart()
+  },
   beforeDestroy() {},
   computed: {},
   watch: {
-    echartData: {
+    rate: {
       handler(newVal, oldVal) {
         this.initEchart()
       },
@@ -27,11 +29,13 @@ export default {
   methods: {
     // 图表初始化
     initEchart() {
+      console.log('this.rate >> ', this.rate)
+
       const chartDom = document.getElementById('EchartHeadRightPie')
       this.echartInstance = echarts.init(chartDom)
       const dataArr = [
         {
-          value: this.echartData
+          value: this.rate
         }
       ]
       const color = new echarts.graphic.LinearGradient(0, 0, 1, 0, [
@@ -95,7 +99,7 @@ export default {
             }
           },
           {
-            text: `${this.echartData}%`,
+            text: `${this.rate}%`,
             x: 'center',
             top: '50%',
             textStyle: {
