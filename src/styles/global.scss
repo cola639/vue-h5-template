@@ -66,17 +66,3 @@ html,
   transform: translateX(-50%);
 }
 
-// avatar
-.avatar-small {
-  display: flex;
-  align-items: center;
-  background-color: rgb(85, 85, 85);
-  border-radius: 50%;
-  height: 2.5rem;
-  justify-content: center;
-  width: 2.5rem;
-  img {
-    width: 80%;
-    height: 80%;
-  }
-}
